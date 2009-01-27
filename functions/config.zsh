@@ -14,3 +14,15 @@ config_load () {
         echo "  ${fg_bold[red]}cannot load${fg_no_bold[default]} $1"
     fi
 }
+
+config_zshscripts() {
+	if [ -n "$1" ]; then
+		for file in $*; do
+			config_load functions/$file.zsh
+		done
+	else
+		for file in functions/*.zsh; do
+			config_load $file
+		done
+	fi
+}

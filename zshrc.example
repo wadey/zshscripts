@@ -1,0 +1,11 @@
+# Change this to point to where you have the zshscripts dir
+export ZSHSCRIPTS_DIR="`pwd`/zshscripts"
+
+# load config_zshscripts function
+source "$ZSHSCRIPTS_DIR/zshscripts.zsh"
+
+# load all configs
+config_zshscripts
+
+# load specific configs (this example loads git.zsh and foo.zsh)
+# config_zshscripts git foo
